@@ -1,0 +1,34 @@
+<div id="ingredients">
+    <div id="title-bar">
+        <button>Add Ingredient</button>
+    </div>
+    <div id="table-container">
+    <p-table [value]="ingredients" [rowHover]="true"
+    [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading"
+    currentPageReportTemplate="Mutatva {first} - {last} között a  {totalRecords} hozzávalóból."
+    [paginator]="true">
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Név</th>
+                <th>Kalória</th>
+                <th>Protein</th>
+                <th>Zsír</th>
+                <th>Szénhidrát</th>
+                <th>Glikémiás index</th>
+                <th>Mennyiség</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-ingredient>
+            <tr>
+                <td>{{ingredient.name}}</td>
+                <td>{{ingredient.kcal}}</td>
+                <td>{{ingredient.protein}}</td>
+                <td>{{ingredient.fat}}</td>
+                <td>{{ingredient.carbohydrate}}</td>
+                <td>{{ingredient.glycemic_index}}</td>
+                <td>{{ingredient.quantity |lsuffix:ingredient.unit}}</td>
+            </tr>
+        </ng-template>
+    </p-table>
+</div>
+</div>
