@@ -1,0 +1,32 @@
+<div id="container">
+    <div id="menu">
+        <ul id="menu-item-container">
+            <li class="title">
+                <span class="title-text">The Food Storage</span>
+            </li>
+            <li class="menu-item">
+                <fa-icon class="link-icon" [icon]="allFoodIcon"></fa-icon>
+                <span class="link-text">All Food</span>
+            </li>
+            <li class="menu-item">
+                <fa-icon class="link-icon" [icon]="categoriesIcon"></fa-icon>
+                <span class="link-text">Categories</span>
+            </li>
+            <li class="menu-item">
+                <fa-icon class="link-icon" [icon]="ingredientsIcon"></fa-icon>
+                <span class="link-text">Hozzávalok</span>
+            </li>
+            <li class="menu-item">
+                <fa-icon class="link-icon" [icon]="favoritesIcon"></fa-icon>
+                <span class="link-text">Favorites</span>
+            </li>
+            <li class="menu-item">
+                <fa-icon class="link-icon" [icon]="signInIcon"></fa-icon>
+                <span class="link-text">Login</span>
+            </li>
+        </ul>
+    </div>
+    <div id="content">
+        <router-outlet></router-outlet>
+    </div>
+</div>
