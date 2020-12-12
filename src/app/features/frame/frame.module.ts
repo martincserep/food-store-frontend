@@ -12,8 +12,11 @@ import { FrameComponent } from "./components/frame/frame.component";
         SharedModule,
         RouterModule.forChild([
             { path: '', component: FrameComponent , children: [
-                { path: '', pathMatch: 'full', loadChildren: () => import('../foods/foods.module').then(m => m.FoodsModule)},
-                { path: 'ingredients', loadChildren: () => import('../ingredients/ingredients.module').then(m => m.IngredientsModule)}
+                { path: '', pathMatch: 'full', redirectTo: 'foods' },
+                { path: 'foods', loadChildren: () => import('../foods/foods.module').then(m => m.FoodsModule)},
+                { path: 'categories', loadChildren: () => import('../categories/categories.module').then(m => m.CategoriesModule)},
+                { path: 'ingredients', loadChildren: () => import('../ingredients/ingredients.module').then(m => m.IngredientsModule)},
+                { path: 'favorites', loadChildren: () => import('../ingredients/ingredients.module').then(m => m.IngredientsModule)},
             ]}
         ]),
     ]

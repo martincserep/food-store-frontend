@@ -4,25 +4,25 @@
             <li class="title">
                 <span class="title-text">The Food Storage</span>
             </li>
-            <li class="menu-item">
+            <li class="menu-item"  routerLink="/foods" [routerLinkActive]='"active"'>
                 <fa-icon class="link-icon" [icon]="allFoodIcon"></fa-icon>
-                <span class="link-text">All Food</span>
+                <span class="link-text">Ételek</span>
             </li>
-            <li class="menu-item">
+            <li class="menu-item" routerLink="/categories" [routerLinkActive]='"active"'>
                 <fa-icon class="link-icon" [icon]="categoriesIcon"></fa-icon>
-                <span class="link-text">Categories</span>
+                <span class="link-text">Kategóriák</span>
             </li>
-            <li class="menu-item" routerLink="/ingredients">
+            <li class="menu-item" routerLink="/ingredients" [routerLinkActive]='"active"'>
                 <fa-icon class="link-icon" [icon]="ingredientsIcon"></fa-icon>
                 <span class="link-text">Hozzávalok</span>
             </li>
-            <li class="menu-item">
+            <li class="menu-item" [routerLinkActive]='"active"'>
                 <fa-icon class="link-icon" [icon]="favoritesIcon"></fa-icon>
-                <span class="link-text">Favorites</span>
+                <span class="link-text">Kedvencek</span>
             </li>
             <li class="menu-item">
                 <fa-icon class="link-icon" [icon]="signInIcon"></fa-icon>
-                <span class="link-text">Login</span>
+                <span class="link-text">Bejelentkezés</span>
             </li>
         </ul>
     </div>

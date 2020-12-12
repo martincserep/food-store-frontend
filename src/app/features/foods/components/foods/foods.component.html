@@ -1,5 +1,31 @@
 <div id="foods">
     <div id="title-bar">
-        <button>Add Food</button>
+        <button >Kaja ötletet kérek</button>
+        <button>Étel hozzáadása</button>
+    </div>
+    <div id="table-container">
+        <p-table [value]="foods" [rowHover]="true" [rows]="10" [showCurrentPageReport]="true"
+            [rowsPerPageOptions]="[10,25,50]" [loading]="loading"
+            currentPageReportTemplate="Mutatva {first} - {last} között a  {totalRecords} ételből."
+            [paginator]="true">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="name">
+                        <div class="p-d-flex p-jc-between p-ai-center">
+                            Név
+                            <p-sortIcon field="name"></p-sortIcon>
+                            <!-- <p-columnFilter type="text" field="name" display="menu" class="p-ml-auto"></p-columnFilter> -->
+                        </div>
+                    </th>
+                    <th>Leírás</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-ingredient>
+                <tr>
+                    <td>{{ingredient.name}}</td>
+                    <td>{{ingredient.description}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
     </div>
 </div>

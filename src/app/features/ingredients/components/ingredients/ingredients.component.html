@@ -1,34 +1,70 @@
 <div id="ingredients">
     <div id="title-bar">
-        <button>Add Ingredient</button>
+        <button>Hozzávaló hozzáadása</button>
     </div>
     <div id="table-container">
-    <p-table [value]="ingredients" [rowHover]="true"
-    [rows]="10" [showCurrentPageReport]="true" [rowsPerPageOptions]="[10,25,50]" [loading]="loading"
-    currentPageReportTemplate="Mutatva {first} - {last} között a  {totalRecords} hozzávalóból."
-    [paginator]="true">
-        <ng-template pTemplate="header">
-            <tr>
-                <th>Név</th>
-                <th>Kalória</th>
-                <th>Protein</th>
-                <th>Zsír</th>
-                <th>Szénhidrát</th>
-                <th>Glikémiás index</th>
-                <th>Mennyiség</th>
-            </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-ingredient>
-            <tr>
-                <td>{{ingredient.name}}</td>
-                <td>{{ingredient.kcal}}</td>
-                <td>{{ingredient.protein}}</td>
-                <td>{{ingredient.fat}}</td>
-                <td>{{ingredient.carbohydrate}}</td>
-                <td>{{ingredient.glycemic_index}}</td>
-                <td>{{ingredient.quantity |lsuffix:ingredient.unit}}</td>
-            </tr>
-        </ng-template>
-    </p-table>
-</div>
+        <p-table [value]="ingredients" [rowHover]="true" [rows]="10" [showCurrentPageReport]="true"
+            [rowsPerPageOptions]="[10,25,50]" [loading]="loading"
+            currentPageReportTemplate="Mutatva {first} - {last} között a  {totalRecords} hozzávalóból."
+            [paginator]="true">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="name">
+                        <div class="p-d-flex p-jc-between p-ai-center">
+                            Név
+                            <p-sortIcon field="name"></p-sortIcon>
+                            <!-- <p-columnFilter type="text" field="name" display="menu" class="p-ml-auto"></p-columnFilter> -->
+                        </div>
+                    </th>
+                    <th pSortableColumn="kcal">
+                        <div class="p-d-flex p-jc-between p-ai-center">
+                            Kalória
+                            <p-sortIcon field="kcal"></p-sortIcon>
+                            <!-- <p-columnFilter type="text" field="name" display="menu" class="p-ml-auto"></p-columnFilter> -->
+                        </div>
+                    </th>
+                    <th pSortableColumn="protein">
+                        <div class="p-d-flex p-jc-between p-ai-center">
+                            Protein
+                            <p-sortIcon field="protein"></p-sortIcon>
+                            <!-- <p-columnFilter type="text" field="name" display="menu" class="p-ml-auto"></p-columnFilter> -->
+                        </div>
+                    </th>
+                    <th pSortableColumn="fat">
+                        <div class="p-d-flex p-jc-between p-ai-center">
+                            Zsír
+                            <p-sortIcon field="fat"></p-sortIcon>
+                            <!-- <p-columnFilter type="text" field="name" display="menu" class="p-ml-auto"></p-columnFilter> -->
+                        </div>
+                    </th>
+                    <th pSortableColumn="carbohydrate">
+                        <div class="p-d-flex p-jc-between p-ai-center">
+                            Szénhidrát
+                            <p-sortIcon field="carbohydrate"></p-sortIcon>
+                            <!-- <p-columnFilter type="text" field="name" display="menu" class="p-ml-auto"></p-columnFilter> -->
+                        </div>
+                    </th>
+                    <th pSortableColumn="glycemic_index">
+                        <div class="p-d-flex p-jc-between p-ai-center">
+                            Glikémiás index
+                            <p-sortIcon field="glycemic_index"></p-sortIcon>
+                            <!-- <p-columnFilter type="text" field="name" display="menu" class="p-ml-auto"></p-columnFilter> -->
+                        </div>
+                    </th>
+                    <th>Mennyiség</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-ingredient>
+                <tr>
+                    <td>{{ingredient.name}}</td>
+                    <td>{{ingredient.kcal}}</td>
+                    <td>{{ingredient.protein}}</td>
+                    <td>{{ingredient.fat}}</td>
+                    <td>{{ingredient.carbohydrate}}</td>
+                    <td>{{ingredient.glycemic_index}}</td>
+                    <td>{{ingredient.quantity |lsuffix:ingredient.unit}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
 </div>

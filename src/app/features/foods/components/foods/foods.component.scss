@@ -3,6 +3,7 @@
     margin: 1rem 1rem;
     #title-bar {
         display: flex;
+        margin-left: auto;
         button {
             background-color: $lighter-green;
             color: $white;
